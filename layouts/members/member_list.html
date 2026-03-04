@@ -1,0 +1,70 @@
+{{- define "main" -}}
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}
+  <div class="post-content">
+    {{ . }}
+  </div>
+  {{ end }}
+</header>
+
+<section class="post-content">
+  <h2>教員</h2>
+  <ul>
+    {{- range $p := site.Data.members.faculty -}}
+    <li>
+      {{- if $p.url -}}
+      <a href="{{ $p.url }}" target="_blank" rel="noopener">{{ $p.name }}</a>
+      {{- else -}}
+      {{ $p.name }}
+      {{- end -}}
+      {{- with $p.name_en -}}&nbsp;&nbsp;{{ . }} {{- end -}}
+      {{- with $p.title -}}&nbsp;&nbsp;{{ . }} {{- end -}}
+      <ul>
+        {{- with $p.affiliation }}<li>所属: {{ . }}</li>{{- end -}}
+        {{- with $p.research }}<li>研究: {{ . }}</li>{{- end -}}
+        {{- with $p.degree }}<li>学位: {{ . }}</li>{{- end -}}
+      </ul>
+    </li>
+    {{- end -}}
+  </ul>
+</section>
+
+<section class="post-content">
+  <h2>研究員・職員</h2>
+  <ul>
+    {{- range $p := site.Data.members.staff -}}
+    <li>{{ $p.name }}&nbsp;&nbsp;{{ $p.role }}</li>
+    {{- end -}}
+  </ul>
+</section>
+
+<section class="post-content">
+  <h2>学生</h2>
+  <ul>
+    {{- range $p := site.Data.members.students -}}
+    <li>{{ $p.name }}&nbsp;&nbsp;{{ $p.grade }}</li>
+    {{- end -}}
+  </ul>
+</section>
+
+<section class="post-content">
+  <h2>OB・OG</h2>
+  <details>
+    <summary>一覧を見る</summary>
+    {{- range site.Data.members.alumni }}
+    <h3>{{ .fiscal_year }}年度</h3>
+    <ul>
+      {{- range $p := .members }}
+      <li>
+        {{ $p.name }}
+        {{- with $p.title }}&nbsp;({{ . }}){{ end }}
+        {{- with $p.thesis }}<br>「{{ . }}」{{ end }}
+        {{- with $p.next }}<br>→&nbsp;{{ . }}{{ end }}
+      </li>
+      {{- end }}
+    </ul>
+    {{- end }}
+  </details>
+</section>
+{{- end -}}

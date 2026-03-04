@@ -1,0 +1,41 @@
+title: 宇宙情報処理グループ 三好研究室
+theme: PaperMod
+
+menu:
+  main:
+    - identifier: posts
+      name: ニュース
+      url: /posts/
+      weight: 10
+    - identifier: research
+      name: 研究内容
+      url: /research/
+      weight: 30
+    - identifier: members
+      name: メンバー
+      url: /members/
+      weight: 50
+    - identifier: seminars
+      name: セミナー
+      url: /seminars/
+      weight: 70
+    - identifier: access
+      name: アクセス
+      url: /access/
+      weight: 90
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: 宇宙情報処理グループ 三好研究室
+  description: >
+    名古屋大学 工学部電気電子情報工学科 大学院工学研究科電気工学専攻 宇宙情報処理グループ 三好研究室のサイトです。
+  homePagerSize: 3
+  mainSections: ["posts"]
+
+pagination:
+  pagerSize: 5

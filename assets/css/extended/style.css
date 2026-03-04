@@ -1,0 +1,17 @@
+.first-entry.home-info .entry-header h1 {
+  font-size: 2rem;
+}
+
+.post-header h1.post-title {
+  font-size: 2rem;
+}
+
+.post-content {
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.entry-content {
+  line-height: 1.7;
+  font-size: 1rem;
+}
