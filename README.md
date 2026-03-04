@@ -1,5 +1,7 @@
 # NUEE 宇宙電磁環境工学 宇宙情報処理研究グループ 三好研究室 ウェブサイト
 
+[![Deploy Status](https://github.com/miyoshilab/miyoshilab.github.io/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/miyoshilab/miyoshilab.github.io/actions/workflows/gh-pages.yml)
+
 ## フレームワーク
 
 本ウェブサイトは以下の技術スタックで構築されています。
